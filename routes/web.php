@@ -20,9 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/select-user-view', 'HomeController@indexSelectUser')->name('index.select.user');
 Route::post('/select-user', 'HomeController@selectUser')->name('select.user');
 
-
-Route::get('superadmin', 'SuperAdminController@index')->name('superadmin');
-Route::get('superadmin/usuarios', 'SuperAdminController@indexUsuarios')->name('superadmin.usuarios');
+require __DIR__ . '/superadmin/web.php';
 
 Route::get('admin', 'AdminController@index')->name('admin');
 

@@ -17,6 +17,8 @@ class Operadora extends Model
         'descripcion', 'logo', 'css','css_mobile',
     ];
 
+    protected $attributes = ['logo' => 'logo', 'css' => 'css', 'css_mobile' => 'css_mobile'];
+
     public function ModelosTarjetas()
     {
     	return $this->hasMany("TarjetasProactividad\ModeloTarjeta");
