@@ -217,7 +217,7 @@
                         <select id="padre" class="select-search form-control" name="padre">
                             <option value="0">Seleccionar</option>
                             @foreach($categorias as $categoria)
-                                <option value="{{ $categoria->id }}">{{ $categoria->descripcion }}</option>
+                                <option value="{{ $categoria->id }}">{{ $categoria->getJerarquia($categoria->id) }}</option>
                             @endforeach
                         </select>
                     </div>

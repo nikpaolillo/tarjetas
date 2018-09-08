@@ -26,4 +26,8 @@ class Equipo extends Model
             'operadora_id'
         );
     }
+
+    public function EquipoUbicaciones() {
+        return $this->hasMany(EquipoUbicacion::class);
+    }
 }

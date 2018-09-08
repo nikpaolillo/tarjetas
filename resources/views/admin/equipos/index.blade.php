@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{ $equipo->descripcion }}</td>
                     <td>{{ $equipo->created_at }}</td>
-                    <td>Ver</td>
+                    <td><a href="{{ route('equipos.show', [$equipo->id]) }}">Ver</a></td>
                 </tr>
             @endforeach
             </tbody>

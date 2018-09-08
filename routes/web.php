@@ -21,8 +21,7 @@ Route::get('/select-user-view', 'HomeController@indexSelectUser')->name('index.s
 Route::post('/select-user', 'HomeController@selectUser')->name('select.user');
 
 require __DIR__ . '/superadmin/web.php';
-
-Route::get('admin', 'AdminController@index')->name('admin');
+require __DIR__ . '/admin/web.php';
 
 Route::get('usuario', 'UsuarioController@index')->name('usuario');
 

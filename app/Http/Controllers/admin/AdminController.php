@@ -1,7 +1,8 @@
 <?php
 
-namespace TarjetasProactividad\Http\Controllers;
+namespace TarjetasProactividad\Http\Controllers\admin;
 
+use TarjetasProactividad\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use TarjetasProactividad\Equipo;
 use TarjetasProactividad\Operadora;

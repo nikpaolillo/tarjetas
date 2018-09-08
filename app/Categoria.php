@@ -27,7 +27,7 @@ class Categoria extends Model
                 $tree .= $categoria->descripcion;
                 break;
             } else {
-                $tree .= $categoria->descripcion . '/';
+                $tree .= $categoria->descripcion . ' // ';
             }
 
             $categoria = self::where('id', $categoria->padre_id)->first();

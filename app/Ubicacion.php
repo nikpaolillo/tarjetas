@@ -35,4 +35,8 @@ class Ubicacion extends Model
 
         return $tree;
     }
+
+    public function UbicacionEquipos() {
+        $this->hasMany(EquipoUbicacion::class);
+    }
 }
