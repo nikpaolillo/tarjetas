@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group-col-md-6">
+                                <div class="form-group col-md-6">
                                     <button class="btn btn-success">Crear Ubicacion</button>
                                 </div>
                             </div>

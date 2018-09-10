@@ -25,4 +25,18 @@ class EquiposController extends Controller
 
         return view('admin.equipos.ver', ['equipos_ubicaciones' => $equipos_ubicaciones]);
     }
+
+    public function store(Request $request) {
+
+        Equipo::create([
+            'descripcion' => $request->descripcion
+        ]);
+
+        EquipoUbicacion::create([
+
+        ]);
+        dd($request->all());
+    }
+
+
 }

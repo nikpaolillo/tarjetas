@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <button class="btn btn-success">Nuevo equipo</button>
+        <button data-target="#nuevo-equipo" data-toggle="modal" class="btn btn-success">Nuevo equipo</button>
     </div>
 </div>
 
@@ -25,3 +25,13 @@
         </table>
     </div>
 </div>
+
+@section('javascripts')
+    <script>
+        $(document).ready(function () {
+            $('.select-search').select2();
+        });
+    </script>
+@endsection
+
+@include('admin.equipos.modal-nuevo-equipo')

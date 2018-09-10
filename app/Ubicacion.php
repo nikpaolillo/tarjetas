@@ -27,7 +27,7 @@ class Ubicacion extends Model
                 $tree .= $ubicacion->descripcion;
                 break;
             } else {
-                $tree .= $ubicacion->descripcion . '/';
+                $tree .= $ubicacion->descripcion . ' // ';
             }
 
             $ubicacion = self::where('id', $ubicacion->padre_id)->first();

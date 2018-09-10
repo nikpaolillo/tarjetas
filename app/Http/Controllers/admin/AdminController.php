@@ -2,10 +2,13 @@
 
 namespace TarjetasProactividad\Http\Controllers\admin;
 
+use TarjetasProactividad\Categoria;
+use TarjetasProactividad\Clasificacion;
 use TarjetasProactividad\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use TarjetasProactividad\Equipo;
 use TarjetasProactividad\Operadora;
+use TarjetasProactividad\Ubicacion;
 
 class AdminController extends Controller
 {
@@ -15,6 +18,15 @@ class AdminController extends Controller
 
         $equipos = $operadora->Equipos;
 
-        return view('admin.index', ['equipos' => $equipos]);
+        $ubicaciones = Ubicacion::all();
+        $categorias = Categoria::all();
+        $clasificaciones = Clasificacion::all();
+
+        return view('admin.index', [
+            'equipos' => $equipos,
+            'ubicaciones' => $ubicaciones,
+            'categorias' => $categorias,
+            'clasificaciones' => $clasificaciones
+            ]);
     }
 }

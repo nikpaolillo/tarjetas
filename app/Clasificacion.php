@@ -27,7 +27,7 @@ class Clasificacion extends Model
                 $tree .= $clasificacion->descripcion;
                 break;
             } else {
-                $tree .= $clasificacion->descripcion . '/';
+                $tree .= $clasificacion->descripcion . ' // ';
             }
 
             $clasificacion = self::where('id', $clasificacion->padre_id)->first();

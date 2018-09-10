@@ -27,7 +27,7 @@
                         <tr>
                             <th>Descripcion</th>
                             <th>Fecha Desde</th>
-                            <th>Fecha Hasta</th>
+                            <th>Fecha Hasta</th>e
                         </tr>
                         </thead>
                         <tbody>
