@@ -4,9 +4,9 @@ namespace TarjetasProactividad;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EquipoUbicacion extends Model
+class EquipoCategoria extends Model
 {
-    protected $table = 'equipo_ubicacion';
+    protected $table = 'categoria_equipo';
 
     /**
      * The attributes that are mass assignable.
@@ -14,11 +14,11 @@ class EquipoUbicacion extends Model
      * @var array
      */
     protected $fillable = [
-        'equipo_id', 'ubicacion_id', 'fecha_desde', 'fecha_hasta'
+        'equipo_id', 'categoria_id', 'fecha_desde', 'fecha_hasta'
     ];
 
-    public function Ubicacion() {
-        return $this->hasOne(Ubicacion::class, 'id', 'ubicacion_id');
+    public function Categoria() {
+        return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
 
     public function Equipo() {
