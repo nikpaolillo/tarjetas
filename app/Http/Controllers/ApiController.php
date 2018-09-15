@@ -87,7 +87,7 @@ class ApiController extends Controller
             $modeloTarjetas = $operadora->Operadora->ModelosTarjetas; 
             
             foreach ($modeloTarjetas as $keyTarjeta => $modeloTarjeta) {
-                $ret['usuario']['operadoras'][$keyOperadora]['tarjetas'][$keyTarjeta]['id'] = 
+                $ret['usuario']['operadoras'][$keyOperadora]['modelos'][$keyTarjeta]['id'] =
 
                 [
                     'id' => $modeloTarjeta->id,
@@ -103,7 +103,7 @@ class ApiController extends Controller
                     
                     $modeloTarjetaPregunta->load(["ModeloTarjetaRespuestas"]);
 
-                    $ret['usuario']['operadoras'][$keyOperadora]['tarjetas'][$keyTarjeta]['preguntas'][$keyTarjetaPregunta]['id'] = 
+                    $ret['usuario']['operadoras'][$keyOperadora]['modelos'][$keyTarjeta]['preguntas'][$keyTarjetaPregunta]['id'] =
 
                     [
                         'descripcion' => $modeloTarjetaPregunta->descripcion,
@@ -119,7 +119,7 @@ class ApiController extends Controller
 
 
                     foreach ($modeloTarjetaPregunta->ModeloTarjetaRespuestas as $keyTarjetaRespuesta => $modeloTarjetaRespuesta) {
-                        $ret['usuario']['operadoras'][$keyOperadora]['tarjetas'][$keyTarjeta]['preguntas'][$keyTarjetaPregunta]['respuestas'][$keyTarjetaRespuesta] = 
+                        $ret['usuario']['operadoras'][$keyOperadora]['modelos'][$keyTarjeta]['preguntas'][$keyTarjetaPregunta]['respuestas'][$keyTarjetaRespuesta] =
 
                         [
                             'descripcion' => $modeloTarjetaRespuesta->descripcion,

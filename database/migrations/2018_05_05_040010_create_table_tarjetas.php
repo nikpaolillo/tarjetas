@@ -21,7 +21,7 @@ class CreateTableTarjetas extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('tarjetas', function (Blueprint $table) {
+        Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion',100);
             $table->unsignedInteger('modelo_tarjeta_id');
@@ -47,7 +47,7 @@ class CreateTableTarjetas extends Migration
             $table->unsignedInteger('orden');
             $table->string('imagen');
             $table->timestamps();
-            $table->foreign('tarjeta_id')->references('id')->on('tarjetas');
+            $table->foreign('tarjeta_id')->references('id')->on('modelos');
             $table->softDeletes();
         });
 
@@ -60,7 +60,7 @@ class CreateTableTarjetas extends Migration
             $table->unsignedInteger('obligatorio');
             $table->unsignedInteger('orden');
             $table->timestamps();
-            $table->foreign('tarjeta_id')->references('id')->on('tarjetas');
+            $table->foreign('tarjeta_id')->references('id')->on('modelos');
             $table->foreign('tipo_pregunta_id')->references('id')->on('tipos_preguntas');
             $table->softDeletes();
         });

@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/operadoras',"ApiController@operadoras")->name("api.operadoras");
 Route::post('/login',"ApiController@ingresar")->name("api.ingresar");
-Route::post('/new-tarjetas',"ApiController@nuevasTarjetas")->name("api.new-tarjetas");
+Route::post('/new-modelos',"ApiController@nuevasTarjetas")->name("api.new-modelos");
