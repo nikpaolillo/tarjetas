@@ -3,10 +3,13 @@
 namespace TarjetasProactividad\Http\Controllers;
 
 use Illuminate\Http\Request;
+use TarjetasProactividad\Categoria;
+use TarjetasProactividad\Clasificacion;
 use TarjetasProactividad\Equipo;
 use TarjetasProactividad\EquipoCategoria;
 use TarjetasProactividad\EquipoClasificacion;
 use TarjetasProactividad\EquipoUbicacion;
+use TarjetasProactividad\Operadora;
 use TarjetasProactividad\Ubicacion;
 
 class EquiposController extends Controller
@@ -18,9 +21,21 @@ class EquiposController extends Controller
 
     public function index()
     {
-        $ubicaciones = Ubicacion::all();
+        $operadora = Operadora::where('id', session('operadora'))->first();
+        $operadora->load('Equipos');
 
-        return view('superadmin.ubicaciones', ['ubicaciones' => $ubicaciones]);
+        $equipos = $operadora->Equipos;
+
+        $ubicaciones = Ubicacion::all();
+        $categorias = Categoria::all();
+        $clasificaciones = Clasificacion::all();
+
+        return view('admin.equipos.index', [
+            'equipos' => $equipos,
+            'ubicaciones' => $ubicaciones,
+            'categorias' => $categorias,
+            'clasificaciones' => $clasificaciones
+        ]);
     }
 
     public function show(Equipo $equipo)

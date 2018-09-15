@@ -1,3 +1,7 @@
+@extends('layouts.admin')
+
+@section('content')
+
 <div class="row">
     <div class="col-md-12">
         <button data-target="#nuevo-equipo" data-toggle="modal" class="btn btn-success">Nuevo equipo</button>
@@ -25,6 +29,8 @@
         </table>
     </div>
 </div>
+
+@endsection
 
 @section('javascripts')
     <script>
